@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <script>
+            function getComputerChoice() {
+                let options = ["rock", "paper", "scissors"];
+                let choiceIndex = Math.floor(Math.random() * options.length);
+                return options[choiceIndex];
+            }
+
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection == "rock") {
+                    if (computerSelection == "rock") {
+                        return "Computer chose Rock. It's a tie!";
+                    }
+                    else if (computerSelection == "paper") {
+                        return "You lose! Paper beats Rock.";
+                    }
+                    else if (computerSelection == "scissors") {
+                        return "You win! Rock beats Scissors.";
+                    }    
+
+                }
+                else if (playerSelection == "paper") {
+                    if (computerSelection == "rock") {
+                        return "You win! Paper beats Rock.";
+                    }
+                    else if (computerSelection == "paper") {
+                        return "Computer chose Paper. It's a tie!";
+                    }
+                    else if (computerSelection == "scissors") {
+                        return "You lose! Scissors beats Paper.";
+                    }
+                }
+                else if (playerSelection == "scissors") {
+                    if (computerSelection == "rock") {
+                        return "You lose! Rock beats Scissors.";
+                    }
+                    else if (computerSelection == "paper") {
+                        return "You win! Scissors beats Paper.";
+                    }
+                    else if (computerSelection == "scissors") {
+                        return "Computer chose Scissors. It's a tie!";
+                    }
+                }
+                else {
+                    return "Invalid input!";
+                }
+            }
+
+            const playerChoice = "rock";
+            const computerChoice = getComputerChoice();
+            playRound(playerChoice.toLowerCase, computerChoice);
+        </script> 
+    </body>
+</html>
